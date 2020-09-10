@@ -1,4 +1,4 @@
-% Lab 3 modela
+y% Lab 3 modela
 % Gustavo Hurtado - Patricia Melo
 %
 
