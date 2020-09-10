@@ -5,15 +5,23 @@
 
 % Función que separa un H(s) en H1 y H2, si es que esas estaban en
 % retroalimentación.
-% Entrada: Función de transferencia y matriz sI-A.
+% Entrada: Función de transferencia, det(sI-A) y matriz A.
 % Salida: Dos funciones de transferencia que estan en retroalimentación.
-function [H1, H2] = separar_H(H, matriz, det)
+function [H1, H2] = separar_H(H, det, A)
+syms s
 
-% det(A) = A(1)*A(4)-A(3)*A(2)
-% Parte del denominador que no tiene s -A(3)*A(2)
-
+% Numerador y denominador de H(s)
 numerador = H(1)*det;
+denominador = det;
+
+% (s+d)*(s+b)
 res = det+(A(3)*A(2));
 
+numerador = numerador/res;
+% den1 + den2 = denominador, donde den2=1
+den1 = (denominador-res)/res;
+
+H1 = numerador;
+H2 = den1/H1;
 
 end

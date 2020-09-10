@@ -8,11 +8,11 @@
 % Entrada dos funciones de transferencia
 % Estas son de la forma H1=a/(s+b) y H2=c/(s+d)
 % Se solicita ingresar a, b, c y d
-disp("La función de transferencia de H1 es de la forma: a/(s+b")
+disp("La función de transferencia de H1 es de la forma: a/(s+b)")
 a = input("Ingrese a: ");
 b = input("Ingrese b: ");
 
-disp("La función de transferencia de H2 es de la forma: c/(s+d")
+disp("La función de transferencia de H2 es de la forma: c/(s+d)")
 c = input("Ingrese c: ");
 d = input("Ingrese d: ");
 
@@ -29,10 +29,16 @@ d = input("Ingrese d: ");
 % x2'(t)=cx1(t)-x2(t)
 % Además, la salida Y=X1
 % Matricialmente: X'=AX+BU    Y=CX+DU
-A=[-b -a; c -d];
-B=[a; 0];
-C=[1 0];
-D=0;
+A = [-b -a; c -d];
+B = [a; 0];
+C = [1 0];
+D = 0;
+
+% Graficando
+x0 = [1 ; 0];
+
+sys = ss(double(A),double(B),double(C),double(D));
+initial(sys,x0)
 
 
 
