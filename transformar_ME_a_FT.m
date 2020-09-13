@@ -18,13 +18,13 @@ det=(res(1)*res(4)-(res(2)*res(3)));
 adj=[res(4) -res(3);-res(2) res(1)];
 %inversa=(1/det)*adj;
 % C(adj(sI-A))
-res2=C*adj;
+res=C*adj;
 % C(adj(sI-A))B
-res2=res2*B;
+res=res*B;
 % C(adj(sI-A))B+D
-res2=res2+D;
+res=res+D;
 % C(inversa(sI-A))B+D
-H =(1/det)*res2;     % Función de transferencia final
+H =(1/det)*res;     % Función de transferencia final
 
 % Separando H(s) en H1 y H2
 [H1, H2] = separar_H(H, det, A);
