@@ -1,4 +1,4 @@
-syms l1 l2 F0 u A1 A2 R1 R2
+syms l1 l2 F0 F1 F2 u A1 A2 R1 R2
 F0 = input("Ingrese flujo inicial recipiente 1: ");
 A1 = input("Ingrese área recipiente 1: ");
 A2 = input("Ingrese área recipiente 2: ");
